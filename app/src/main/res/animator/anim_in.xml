@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 这里做个说明- 用XML来配置动画效果，下面这种平行的写法其实是让旋转，和透明动画 同时执行，
+    startOffset是执行延时，对应ObjectAnimator的 setStartDelay(long startDelay) 方法 -->
+
+    <!--旋转-->
+    <objectAnimator
+        android:duration="500"
+        android:propertyName="rotationY"
+        android:valueFrom="-180"
+        android:valueTo="0" />
+
+    <!--出现-->
+    <objectAnimator
+        android:duration="0"
+        android:propertyName="alpha"
+        android:startOffset="250"
+        android:valueFrom="0.0"
+        android:valueTo="1.0" />
+    <!-- 所以说这个startOffSet的意思就是，这个动画延迟多久ms以后执行 -->
+</set>
